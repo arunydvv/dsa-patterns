@@ -166,4 +166,3 @@ This document categorizes every known greedy pattern type, serving as a referenc
 
 ## 📖 Contributions
 
-Want to add an edge-case or a niche greedy pattern? Open a PR 🚀
