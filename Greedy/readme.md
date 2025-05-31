@@ -165,4 +165,3 @@ This document categorizes every known greedy pattern type, serving as a referenc
 ---
 
 ## 📖 Contributions
-
