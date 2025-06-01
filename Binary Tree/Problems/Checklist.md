@@ -73,3 +73,26 @@
    TC: O(n log n) / SC: O(n)
 
 ---
+
+### ✅ Maximum Depth/Height of Binary Tree [[104](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)]
+
+- **Recursive DFS** — Traverse left & right, take max depth.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative DFS (with Stack)** — Use stack to track nodes and depth.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative BFS (with Queue)** — Level order traversal, track levels.  
+   TC: O(n) / SC: O(w) (w = max width of tree)
+
+---
+
+### ✅ Balanced Binary Tree [[110](https://leetcode.com/problems/balanced-binary-tree/description/)]
+
+- **Recursive (Bottom-up)** — Check height & balance while unwinding recursion.  
+   TC: O(n) / SC: O(h)
+
+- **Recursive (Top-down)** — Check balance at each node, compute height separately.  
+   TC: O(n²) / SC: O(h)
+
+---
