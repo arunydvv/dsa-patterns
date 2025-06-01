@@ -52,3 +52,24 @@
    TC: O(n) / SC: O(h)
 
 ---
+
+### ✅ N-ary Tree Level Order Traversal [[429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/description/)]
+
+- **BFS with Queue** — Standard level-order traversal using queue.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### ✅ Minimum Number of Operations to Sort a Binary Tree by Level [[2471](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)]
+
+- **Level Order Traversal + Min Swaps Calculation** — Traverse each level, count min swaps to sort it.  
+   TC: O(n log n) / SC: O(n)
+
+---
+
+### ✅ Kth Largest Sum in a Binary Tree [[2583](https://leetcode.com/problems/kth-largest-sum-in-a-binary-tree/)]
+
+- **Level Order Traversal (BFS + Max-Heap)** — Collect level sums, push to max-heap, pop k-1 times, then get top.  
+   TC: O(n log n) / SC: O(n)
+
+---
