@@ -96,3 +96,46 @@
    TC: O(n²) / SC: O(h)
 
 ---
+
+### ✅ Diameter of Binary Tree [[543](https://leetcode.com/problems/diameter-of-binary-tree/description/)]
+
+- **Recursive (Bottom-up)** — Compute height while updating the maximum diameter during recursion unwind.  
+   TC: O(n) / SC: O(h)
+
+- **Recursive (Top-down)** — For each node, compute height of left and right subtrees separately to calculate diameter.  
+   TC: O(n²) / SC: O(h)
+
+---
+
+### ✅ Binary Tree Maximum Path Sum [[124](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/)]
+
+- **Recursive DFS with Global Max** — Track max path sum including and excluding each node.  
+   TC: O(n) / SC: O(h)
+
+- **Divide and Conquer** — Compute max path sums from left and right subtrees, update global max.  
+   TC: O(n) / SC: O(h)
+
+---
+
+### ✅ Same Tree [[100](https://leetcode.com/problems/same-tree/description/)]
+
+- **Recursive DFS** — Compare nodes recursively.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative BFS** — Use queue to compare level-wise.  
+   TC: O(n) / SC: O(n)
+
+- **Iterative DFS** — Use stack to compare nodes.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### ✅ Invert Binary Tree [[226](https://leetcode.com/problems/invert-binary-tree/)]
+
+- **Recursive Approach** — Swap left and right subtrees via DFS recursion.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative Approach** — Use a queue or stack to swap nodes level-by-level.  
+   TC: O(n) / SC: O(n)
+
+---
