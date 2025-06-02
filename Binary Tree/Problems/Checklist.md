@@ -1,7 +1,7 @@
 
 ## 📚 LeetCode Problems Checklist
 
-### ✅ Binary Tree Postorder Traversal [[145](https://leetcode.com/problems/binary-tree-postorder-traversal/description/)]
+### 1 Binary Tree Postorder Traversal [[145](https://leetcode.com/problems/binary-tree-postorder-traversal/description/)]
 
 - **Recursive Approach** — Simple DFS using recursion.  
    TC: O(n) / SC: O(h)
@@ -17,7 +17,7 @@
 
 ---
 
-### ✅ Binary Tree Preorder Traversal [[144](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)]
+### 2 Binary Tree Preorder Traversal [[144](https://leetcode.com/problems/binary-tree-preorder-traversal/description/)]
 
 - **Recursive Approach** — Simple DFS using recursion.  
    TC: O(n) / SC: O(h)
@@ -30,7 +30,7 @@
 
 ---
 
-### ✅ Binary Tree Inorder Traversal [[94](https://leetcode.com/problems/binary-tree-inorder-traversal/)]
+### 3 Binary Tree Inorder Traversal [[94](https://leetcode.com/problems/binary-tree-inorder-traversal/)]
 
 - **Recursive Approach** — Simple DFS using recursion.  
    TC: O(n) / SC: O(h)
@@ -43,7 +43,7 @@
 
 ---
 
-### ✅ Binary Tree Level Order Traversal [[102](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)]
+### 4 Binary Tree Level Order Traversal [[102](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)]
 
 - **BFS with Queue** — Standard level-by-level traversal using a queue.  
    TC: O(n) / SC: O(n)
@@ -53,28 +53,28 @@
 
 ---
 
-### ✅ N-ary Tree Level Order Traversal [[429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/description/)]
+### 5 N-ary Tree Level Order Traversal [[429](https://leetcode.com/problems/n-ary-tree-level-order-traversal/description/)]
 
 - **BFS with Queue** — Standard level-order traversal using queue.  
    TC: O(n) / SC: O(n)
 
 ---
 
-### ✅ Minimum Number of Operations to Sort a Binary Tree by Level [[2471](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)]
+### 6 Minimum Number of Operations to Sort a Binary Tree by Level [[2471](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)]
 
 - **Level Order Traversal + Min Swaps Calculation** — Traverse each level, count min swaps to sort it.  
    TC: O(n log n) / SC: O(n)
 
 ---
 
-### ✅ Kth Largest Sum in a Binary Tree [[2583](https://leetcode.com/problems/kth-largest-sum-in-a-binary-tree/)]
+### 7 Kth Largest Sum in a Binary Tree [[2583](https://leetcode.com/problems/kth-largest-sum-in-a-binary-tree/)]
 
 - **Level Order Traversal (BFS + Max-Heap)** — Collect level sums, push to max-heap, pop k-1 times, then get top.  
    TC: O(n log n) / SC: O(n)
 
 ---
 
-### ✅ Maximum Depth/Height of Binary Tree [[104](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)]
+### 8 Maximum Depth/Height of Binary Tree [[104](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)]
 
 - **Recursive DFS** — Traverse left & right, take max depth.  
    TC: O(n) / SC: O(h)
@@ -87,7 +87,7 @@
 
 ---
 
-### ✅ Balanced Binary Tree [[110](https://leetcode.com/problems/balanced-binary-tree/description/)]
+### 9 Balanced Binary Tree [[110](https://leetcode.com/problems/balanced-binary-tree/description/)]
 
 - **Recursive (Bottom-up)** — Check height & balance while unwinding recursion.  
    TC: O(n) / SC: O(h)
@@ -97,7 +97,7 @@
 
 ---
 
-### ✅ Diameter of Binary Tree [[543](https://leetcode.com/problems/diameter-of-binary-tree/description/)]
+### 10 Diameter of Binary Tree [[543](https://leetcode.com/problems/diameter-of-binary-tree/description/)]
 
 - **Recursive (Bottom-up)** — Compute height while updating the maximum diameter during recursion unwind.  
    TC: O(n) / SC: O(h)
@@ -107,7 +107,7 @@
 
 ---
 
-### ✅ Binary Tree Maximum Path Sum [[124](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/)]
+### 11 Binary Tree Maximum Path Sum [[124](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/)]
 
 - **Recursive DFS with Global Max** — Track max path sum including and excluding each node.  
    TC: O(n) / SC: O(h)
@@ -117,7 +117,7 @@
 
 ---
 
-### ✅ Same Tree [[100](https://leetcode.com/problems/same-tree/description/)]
+### 12 Same Tree [[100](https://leetcode.com/problems/same-tree/description/)]
 
 - **Recursive DFS** — Compare nodes recursively.  
    TC: O(n) / SC: O(h)
@@ -130,7 +130,7 @@
 
 ---
 
-### ✅ Invert Binary Tree [[226](https://leetcode.com/problems/invert-binary-tree/)]
+### 13 Invert Binary Tree [[226](https://leetcode.com/problems/invert-binary-tree/)]
 
 - **Recursive Approach** — Swap left and right subtrees via DFS recursion.  
    TC: O(n) / SC: O(h)
@@ -140,7 +140,7 @@
 
 ---
 
-### ✅ Binary Tree Zigzag Level Order Traversal [[103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)]
+### 14 Binary Tree Zigzag Level Order Traversal [[103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)]
 
 - **BFS with deque** — Use queue and reverse order every alternate level.  
    TC: O(n) / SC: O(n)
@@ -150,7 +150,7 @@
 
 ---
 
-### ✅ Symmetric Tree [[101](https://leetcode.com/problems/symmetric-tree/description/)]
+### 15 Symmetric Tree [[101](https://leetcode.com/problems/symmetric-tree/description/)]
 
 - **Recursive Approach** — Compare left & right subtrees recursively.  
    TC: O(n) / SC: O(h)
@@ -160,7 +160,7 @@
 
 ---
 
-### ✅ Boundary of Binary Tree [[545](https://leetcode.com/problems/boundary-of-binary-tree/description/)]
+### 16 Boundary of Binary Tree [[545](https://leetcode.com/problems/boundary-of-binary-tree/description/)]
 
 - **DFS Traversal** — Traverse left boundary, leaves, right boundary separately.  
    TC: O(n) / SC: O(h)
@@ -170,7 +170,7 @@
 
 ---
 
-### ✅ Vertical Order Traversal of a Binary Tree [[987](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/)]
+### 17 Vertical Order Traversal of a Binary Tree [[987](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/)]
 
 - **TreeMap + Nested TreeMap + Priority Queue** — Sort nodes by vertical, then level, then value using nested TreeMaps and PQ.  
    TC: O(n log n) / SC: O(n)
@@ -183,7 +183,7 @@
 
 ---
 
-### ✅ Top View of Binary Tree
+### 18 Top View of Binary Tree
 
 - **BFS + HashMap** — Traverse level-wise, track first node at each horizontal distance using a HashMap.  
    TC: O(n) / SC: O(n)
@@ -196,7 +196,7 @@
 
 ---
 
-### ✅ Bottom View of Binary Tree
+### 19 Bottom View of Binary Tree
 
 - **BFS + Map (horizontal distance → node)** — Use BFS, overwrite map value for each horizontal distance to get bottom-most node.  
    TC: O(n) / SC: O(n)
@@ -209,7 +209,7 @@
 
 ---
 
-### ✅ Left View of Binary Tree
+### 20 Left View of Binary Tree
 
 - **Level Order Traversal (BFS)** — Print first node at each level.  
    TC: O(n) / SC: O(n)
@@ -219,7 +219,7 @@
 
 ---
 
-### ✅ Right View of Binary Tree
+### 21 Right View of Binary Tree
 
 - **Level Order Traversal (BFS)** — Print last node at each level.  
    TC: O(n) / SC: O(n)
@@ -229,7 +229,7 @@
 
 ---
 
-### ✅ Path Sum II [[113](https://leetcode.com/problems/path-sum-ii/description/)]
+### 22 Path Sum II [[113](https://leetcode.com/problems/path-sum-ii/description/)]
 
 - **Recursive DFS + Backtracking** — Explore all paths, backtrack after visiting children.  
    TC: O(n) / SC: O(h)
@@ -239,7 +239,7 @@
 
 ---
 
-### ✅ Smallest String Starting From Leaf [[988](https://leetcode.com/problems/smallest-string-starting-from-leaf/description/)]
+### 23 Smallest String Starting From Leaf [[988](https://leetcode.com/problems/smallest-string-starting-from-leaf/description/)]
 
 - **DFS + StringBuilder (prepend at front)** — Use `StringBuilder` to build string from leaf to root by inserting at front.  
    TC: O(n²) / SC: O(h)
@@ -252,23 +252,74 @@
 
 ---
 
-### ✅ Longest Univalue Path [[687](https://leetcode.com/problems/longest-univalue-path/description/)]
+### 24 Longest Univalue Path [[687](https://leetcode.com/problems/longest-univalue-path/description/)]
 
 - **Recursive (Postorder DFS)** — At each node, compute longest univalue path in left & right, extend path if values match.  
    TC: O(n) / SC: O(h)
 
 - **Iterative with Stack (Modified DFS)** — Simulate DFS using stack while tracking parent values. (Less common)  
    TC: O(n) / SC: O(h)
----
-### ✅ Lowest Common Ancestor of a Binary Tree [[236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)]
 
--  **Recursive (Bottom-up)** — Return node if it’s `p` or `q`, else recurse left & right and pick the non-null.  
+---
+
+### 25 Lowest Common Ancestor of a Binary Tree [[236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)]
+
+- **Recursive (Bottom-up)** — Return node if p/q found, else propagate LCA from subtrees.  
    TC: O(n) / SC: O(h)
 
--  **Parent Map + Path Tracing** — Store parent of each node using BFS/DFS, then trace ancestors from both nodes upward.  
+- **Parent Pointers + HashSet** — Store parent of each node, trace p’s ancestors, check q's path upward.  
    TC: O(n) / SC: O(n)
 
--  **Iterative Postorder using Stack** — Mimic recursion with explicit stack, track visited nodes.  
-   TC: O(n) / SC: O(h)
+- **Iterative DFS with Parent Map** — Build parent map using DFS, then backtrack both nodes to find LCA.  
+   TC: O(n) / SC: O(n)
+
 ---
 
+### 26 Path Sum [[112](https://leetcode.com/problems/path-sum/description/)]
+
+- **Recursive DFS** — Check sum along each root-to-leaf path via recursion.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative DFS with Stack** — Use stack to track (node, current sum).  
+   TC: O(n) / SC: O(h)
+
+- **Iterative BFS with Queue** — Use queue to track (node, current sum).  
+   TC: O(n) / SC: O(h)
+
+---
+
+### 27 Path In Zigzag Labelled Binary Tree [[1104](https://leetcode.com/problems/path-in-zigzag-labelled-binary-tree/description/)]
+
+- **Math + Level Calculation** — Find level using `Math.log2(label)` + 1, compute mirrored label when needed, backtrack to parent.  
+   TC: O(log n) / SC: O(1)
+
+- **Recursive Approach** — Recursively compute parent by adjusting mirrored values and collect path.  
+   TC: O(log n) / SC: O(log n)
+
+- **Iterative Approach** — Same as math logic but use a loop to build path from target to root.  
+   TC: O(log n) / SC: O(log n)
+
+---
+
+### 28 Cycle Length Queries in a Tree [[2586](https://leetcode.com/problems/cycle-length-queries-in-a-tree)]
+
+- **Simulate upward moves to LCA** — Move both nodes up to their LCA by dividing by 2, count steps.  
+   TC: O(q * log n) / SC: O(1)
+
+- **Precompute ancestors + LCA queries** — Use binary lifting for faster LCA queries, then calculate path length.  
+   TC: O((n + q) * log n) / SC: O(n log n)
+
+---
+
+### 29 Populating Next Right Pointers in Each Node [[116](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/)]
+
+- **DFS Pairing Approach** — Recursively connect left-right, right-left, etc.  
+   TC: O(n) / SC: O(h)
+
+- **BFS (Level Order using Queue)** — Use queue to connect nodes level by level.  
+   TC: O(n) / SC: O(n)
+
+- **Iterative (Using Existing Next Pointers)** — Connect nodes on current level while traversing via `.next` pointers.  
+   TC: O(n) / SC: O(1)
+
+---
