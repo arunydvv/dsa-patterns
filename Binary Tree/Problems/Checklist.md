@@ -238,3 +238,37 @@
    TC: O(n) / SC: O(h)
 
 ---
+
+### ✅ Smallest String Starting From Leaf [[988](https://leetcode.com/problems/smallest-string-starting-from-leaf/description/)]
+
+- **DFS + StringBuilder (prepend at front)** — Use `StringBuilder` to build string from leaf to root by inserting at front.  
+   TC: O(n²) / SC: O(h)
+
+- **DFS + ArrayList (compare from end)** — Track path chars in list, build string when at leaf by iterating from end.  
+   TC: O(n²) / SC: O(h)
+
+- **DFS + Char Array (optimized)** — Use a char array to track path, backtrack as needed.  
+   TC: O(n) avg / SC: O(h)
+
+---
+
+### ✅ Longest Univalue Path [[687](https://leetcode.com/problems/longest-univalue-path/description/)]
+
+- **Recursive (Postorder DFS)** — At each node, compute longest univalue path in left & right, extend path if values match.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative with Stack (Modified DFS)** — Simulate DFS using stack while tracking parent values. (Less common)  
+   TC: O(n) / SC: O(h)
+---
+### ✅ Lowest Common Ancestor of a Binary Tree [[236](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)]
+
+-  **Recursive (Bottom-up)** — Return node if it’s `p` or `q`, else recurse left & right and pick the non-null.  
+   TC: O(n) / SC: O(h)
+
+-  **Parent Map + Path Tracing** — Store parent of each node using BFS/DFS, then trace ancestors from both nodes upward.  
+   TC: O(n) / SC: O(n)
+
+-  **Iterative Postorder using Stack** — Mimic recursion with explicit stack, track visited nodes.  
+   TC: O(n) / SC: O(h)
+---
+
