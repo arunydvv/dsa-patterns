@@ -139,3 +139,102 @@
    TC: O(n) / SC: O(n)
 
 ---
+
+### ✅ Binary Tree Zigzag Level Order Traversal [[103](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)]
+
+- **BFS with deque** — Use queue and reverse order every alternate level.  
+   TC: O(n) / SC: O(n)
+
+- **DFS with level tracking** — Traverse preorder, add nodes in zigzag by level.  
+   TC: O(n) / SC: O(h)
+
+---
+
+### ✅ Symmetric Tree [[101](https://leetcode.com/problems/symmetric-tree/description/)]
+
+- **Recursive Approach** — Compare left & right subtrees recursively.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative Approach** — Use queue to compare nodes level-wise.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### ✅ Boundary of Binary Tree [[545](https://leetcode.com/problems/boundary-of-binary-tree/description/)]
+
+- **DFS Traversal** — Traverse left boundary, leaves, right boundary separately.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative Approach** — Use stacks/queues to collect boundary nodes in order.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### ✅ Vertical Order Traversal of a Binary Tree [[987](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/)]
+
+- **TreeMap + Nested TreeMap + Priority Queue** — Sort nodes by vertical, then level, then value using nested TreeMaps and PQ.  
+   TC: O(n log n) / SC: O(n)
+
+- **BFS + Map with coordinates** — Traverse with BFS, map nodes by coordinates, then sort results.  
+   TC: O(n log n) / SC: O(n)
+
+- **DFS + Coordinate Tracking** — Use DFS to track (x,y), then sort collected nodes.  
+   TC: O(n log n) / SC: O(n)
+
+---
+
+### ✅ Top View of Binary Tree
+
+- **BFS + HashMap** — Traverse level-wise, track first node at each horizontal distance using a HashMap.  
+   TC: O(n) / SC: O(n)
+
+- **DFS + HashMap with Level Tracking** — Use DFS with horizontal distance and level, update map only if level is smaller.  
+   TC: O(n) / SC: O(n)
+
+- **TreeMap + BFS** — Use TreeMap to keep nodes sorted by horizontal distance during BFS.  
+   TC: O(n log n) / SC: O(n)
+
+---
+
+### ✅ Bottom View of Binary Tree
+
+- **BFS + Map (horizontal distance → node)** — Use BFS, overwrite map value for each horizontal distance to get bottom-most node.  
+   TC: O(n) / SC: O(n)
+
+- **DFS + Map with depth tracking** — DFS traversal with horizontal distance and depth; update map only if deeper node found.  
+   TC: O(n) / SC: O(n)
+
+- **Level order traversal + HashMap** — Track nodes by horizontal distance, last encountered node at each distance is bottom view.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### ✅ Left View of Binary Tree
+
+- **Level Order Traversal (BFS)** — Print first node at each level.  
+   TC: O(n) / SC: O(n)
+
+- **Recursive Preorder (DFS)** — Track max level visited and print first node at each level.  
+   TC: O(n) / SC: O(h)
+
+---
+
+### ✅ Right View of Binary Tree
+
+- **Level Order Traversal (BFS)** — Print last node at each level.  
+   TC: O(n) / SC: O(n)
+
+- **Recursive Preorder (DFS)** — Track max level visited, traverse right child first, print first node at each level.  
+   TC: O(n) / SC: O(h)
+
+---
+
+### ✅ Path Sum II [[113](https://leetcode.com/problems/path-sum-ii/description/)]
+
+- **Recursive DFS + Backtracking** — Explore all paths, backtrack after visiting children.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative DFS with Stack** — Stack of `(node, currentPath, sum)` to simulate recursion.  
+   TC: O(n) / SC: O(h)
+
+---
