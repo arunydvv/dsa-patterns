@@ -323,3 +323,13 @@
    TC: O(n) / SC: O(1)
 
 ---
+
+### 30 Maximum Width of Binary Tree [[662](https://leetcode.com/problems/maximum-width-of-binary-tree/description/)]
+
+- **BFS + Index Tracking** — Use BFS, assign indices to nodes, compute width as `(last - first + 1)` at each level.  
+   TC: O(n) / SC: O(n)
+
+- **DFS + Index Map** — Use DFS to track leftmost index at each depth, then compute width.  
+   TC: O(n) / SC: O(h)
+
+---
