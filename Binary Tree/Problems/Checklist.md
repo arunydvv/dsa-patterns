@@ -369,3 +369,42 @@
    TC: O(n) / SC: O(h)
 
 ---
+
+### 34 Count Complete Tree Nodes [[222](https://leetcode.com/problems/count-complete-tree-nodes/description/)]
+
+- **Simple Recursive (DFS)** — Recursively count left + right + 1.  
+   TC: O(n) / SC: O(h)
+
+- **Optimized Recursive (Height-based)** — Compare left & right subtree heights; if equal, use formula `2^h - 1`.  
+   TC: O(log² n) / SC: O(log n)     *IMP*
+
+- **Iterative (Height-based)** — Same logic as optimized recursive, done iteratively.  
+   TC: O(log² n) / SC: O(1)
+
+---
+
+### 35 Construct Binary Tree from Preorder and Inorder Traversal [[105](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)]
+
+- **Recursive with HashMap** — Use preorder to pick root, find root in inorder using a hashmap for O(1) lookup, recursively build left/right subtrees.  
+   TC: O(n) / SC: O(n)
+
+- **Recursive without HashMap** — Same as above but search root index in inorder with linear scan each time.  
+   TC: O(n²) / SC: O(n)
+
+- **Iterative Approach** — Use stack to simulate recursion based on preorder and inorder arrays.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### 36 Flatten Binary Tree to Linked List [[114](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/)]
+
+- **Recursive (Reverse Postorder)** — Process right, left, then root recursively, track previous node.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative with Stack** — Use stack to mimic reverse preorder traversal, adjust pointers on the fly.  
+   TC: O(n) / SC: O(n)
+
+- **Morris Traversal (Threaded Binary Tree)** — O(1) space by rewiring left subtrees to predecessors.  
+   TC: O(n) / SC: O(1)
+
+---
