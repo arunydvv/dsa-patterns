@@ -333,3 +333,39 @@
    TC: O(n) / SC: O(h)
 
 ---
+
+### 31 Check for Children Sum Property in a Binary Tree [[GFG](https://www.geeksforgeeks.org/check-for-children-sum-property-in-a-binary-tree/)]
+
+- **Recursive (Top-down)** — At each node, check `node.data == left.data + right.data`, recurse for children.  
+   TC: O(n) / SC: O(h)
+
+- **Iterative (Level Order Traversal)** — Use queue, check sum property at each level iteratively.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### 32 All Nodes Distance K in Binary Tree [[863](https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/)]
+
+- **DFS to build Parent Map + BFS from Target** — First map each node’s parent, then BFS from target up to K distance.  
+   TC: O(n) / SC: O(n)
+
+- **Pure DFS with Distance Tracking** — Recursively traverse while keeping track of distance from target.  
+   TC: O(n) / SC: O(h)
+
+- **DFS to build Graph + BFS** — Convert tree into undirected graph (adjacency list), then BFS from target node.  
+   TC: O(n) / SC: O(n)
+
+---
+
+### 33 Amount of Time for Binary Tree to Be Infected [[2385](https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/)]
+
+- **Convert to Graph + BFS** — Convert tree to undirected graph using adjacency list, then run BFS from start node to find max infection time.  
+   TC: O(n) / SC: O(n)
+
+- **DFS + Parent Map + Queue** — Track parents while doing DFS, then BFS from start using queue and visited set.  
+   TC: O(n) / SC: O(n)
+
+- **DFS (Single Pass with Depth Propagation)** — Recursively calculate max time by simulating infection spread during traversal (more advanced, but doable).  
+   TC: O(n) / SC: O(h)
+
+---
