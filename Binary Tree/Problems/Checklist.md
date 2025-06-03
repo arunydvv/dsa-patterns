@@ -408,3 +408,13 @@
    TC: O(n) / SC: O(1)
 
 ---
+
+### 37 Most Frequent Subtree Sum [[508](https://leetcode.com/problems/most-frequent-subtree-sum/description/)]
+
+- **Postorder DFS + HashMap** — Postorder compute subtree sums, track frequencies in a map.  
+   TC: O(n) / SC: O(n)
+
+- **Postorder DFS + Counter Array** — Similar to above but with a pre-sized array if sum ranges are known (rare case).  
+   TC: O(n) / SC: O(n)
+
+---
