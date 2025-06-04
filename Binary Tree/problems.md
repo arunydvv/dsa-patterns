@@ -1,5 +1,4 @@
-
-## 📚 LeetCode Problems Checklist
+## 📚  Problems Checklist
 
 ### 1 Binary Tree Postorder Traversal [[145](https://leetcode.com/problems/binary-tree-postorder-traversal/description/)]
 
