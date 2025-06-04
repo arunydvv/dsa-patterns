@@ -104,3 +104,18 @@
 
 ---
 
+### 10 Two Sum IV - Input is a BST [[653](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/)]
+
+-  **DFS + HashSet** — Traverse tree, store visited nodes in set, check complement.  
+   TC: O(n) / SC: O(n)
+
+-  **For each node, search complement in BST** — For each node, search BST for (k - node.val).  
+   TC: O(n log n) average / SC: O(h)
+
+-  **Inorder traversal + Two pointers** — Convert BST to sorted array, then use two-pointer approach.  
+   TC: O(n) / SC: O(n)
+
+-  **Iterative Inorder + Reverse Inorder Traversal (Two Iterators)** — Use two stacks to simulate forward and backward inorder traversals simultaneously.  
+   TC: O(n) / SC: O(h)
+
+---
