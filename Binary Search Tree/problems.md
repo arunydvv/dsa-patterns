@@ -60,5 +60,32 @@
    TC: O(h) / SC: O(1)
 
 ---
+### 7 Kth Smallest Element in a BST [[230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/)]
 
+-  **Inorder Traversal (Recursive)** — Do inorder traversal (sorted order), decrement k, return kth value.  
+   TC: O(h + k) / SC: O(h)
+
+-  **Inorder Traversal (Iterative with Stack)** — Use stack to perform inorder iteratively, track k.  
+   TC: O(h + k) / SC: O(h)
+
+-  **Morris Inorder Traversal** — O(1) space inorder traversal using threaded binary tree technique.  
+   TC: O(n) / SC: O(1)
+
+-  **Augmented BST (Node Count Tracking)** — Store count of nodes in left subtree at each node for O(log n) access.  
+   TC: O(h) / SC: O(1) (if counts maintained)
+
+---
+
+### 8 Lowest Common Ancestor of a Binary Search Tree [[235](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)]
+
+-  **Recursive BST Property** — Move left/right based on node values.  
+   TC: O(h) / SC: O(h)
+
+-  **Iterative BST Property** — Same logic as recursive, done iteratively.  
+   TC: O(h) / SC: O(1)
+
+-  **Path Finding + Compare Paths** — Find path from root to both nodes, then compare paths.  
+   TC: O(n) / SC: O(n)
+
+---
 
