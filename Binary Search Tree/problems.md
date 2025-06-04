@@ -39,6 +39,26 @@
    TC: O(h) / SC: O(1)
 
 ---
+### 5 Insert into a Binary Search Tree [[701](https://leetcode.com/problems/insert-into-a-binary-search-tree/description/)]
 
+-  **Recursive Approach** — Traverse recursively to find insert position.  
+   TC: O(h) / SC: O(h)
+
+-  **Iterative Approach** — Use a loop to find insert position without recursion.  
+   TC: O(h) / SC: O(1)
+
+-  **Morris Traversal (Threaded BST)** — Not commonly used for insert, but possible for traversal with O(1) space (rare).  
+   TC: O(n) / SC: O(1)
+
+---
+### 6 Delete Node in a BST [[450](https://leetcode.com/problems/delete-node-in-a-bst/description/)]
+
+-  **Recursive Approach** — Recursively find the node, replace with inorder successor/predecessor if needed.  
+   TC: O(h) / SC: O(h)
+
+-  **Iterative Approach** — Use while loops to locate and delete node, handle cases for 0, 1, or 2 children.  
+   TC: O(h) / SC: O(1)
+
+---
 
 

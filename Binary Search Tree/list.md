@@ -5,3 +5,4 @@ Floor in a Binary Search Tree
 Insert into a Binary Search Tree 
 Delete a Node in Binary Search Tree
 Find K-th smallest/largest element in BST
+Delete Node in a BST
