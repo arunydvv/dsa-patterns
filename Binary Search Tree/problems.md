@@ -88,4 +88,19 @@
    TC: O(n) / SC: O(n)
 
 ---
+### 9 Validate Binary Search Tree [[98](https://leetcode.com/problems/validate-binary-search-tree/description/)]
+
+-  **Recursive DFS with min/max limits** — Pass down valid range for each node.  
+   TC: O(n) / SC: O(h)
+
+-  **Inorder Traversal (Recursive)** — Check if inorder sequence is strictly increasing.  
+   TC: O(n) / SC: O(h)
+
+-  **Inorder Traversal (Iterative)** — Iterative stack-based inorder traversal to verify sorted order.  
+   TC: O(n) / SC: O(h)
+
+-  **Morris Inorder Traversal** — Threaded tree traversal for O(1) space inorder check.  
+   TC: O(n) / SC: O(1)
+
+---
 
