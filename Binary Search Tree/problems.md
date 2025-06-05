@@ -119,3 +119,16 @@
    TC: O(n) / SC: O(h)
 
 ---
+
+### 11 Recover Binary Search Tree [[99](https://leetcode.com/problems/recover-binary-search-tree/description/)]
+-  **Recursive Inorder DFS** — Track previous node, detect 2 anomalies, and swap values.Track first/middle/last/prev. Two cases 1-> Swapped not adjacent 2-> Not adjacent
+TC: O(n) / SC: O(h)
+
+-  **Iterative Inorder with Stack** — Same logic as recursive, using a stack for traversal.
+TC: O(n) / SC: O(h)
+
+
+-  **Morris Traversal (Threaded Binary Tree)** — Inorder traversal with O(1) space, find swapped nodes during traversal.
+TC: O(n) / SC: O(1)
+---
+
