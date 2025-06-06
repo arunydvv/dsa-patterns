@@ -8,3 +8,6 @@ Find K-th smallest/largest element in BST
 Delete Node in a BST
 Kth Smallest Element in a BST
 Lowest Common Ancestor of a Binary Search Tree
+Validate Binary Search Tree
+Two Sum IV - Input is a BST
+Recover Binary Search Tree 

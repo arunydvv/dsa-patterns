@@ -1,6 +1,6 @@
 ## 📚  Problems Checklist
 
-### 2 Search in a Binary Search Tree [[700](https://leetcode.com/problems/search-in-a-binary-search-tree/description/)]
+### 1 Search in a Binary Search Tree [[700](https://leetcode.com/problems/search-in-a-binary-search-tree/description/)]
 
 -  **Recursive Approach** — Recursively search left or right subtree based on value.  
    TC: O(h) / SC: O(h)
@@ -132,3 +132,15 @@ TC: O(n) / SC: O(h)
 TC: O(n) / SC: O(1)
 ---
 
+### 12 Inorder Successor / Predecessor in BST
+
+-  **Recursive Approach** — Use BST property to move left/right based on value comparison.  
+   TC: O(h) / SC: O(h)
+
+-  **Iterative Approach** — Track potential successor/predecessor while traversing.  
+   TC: O(h) / SC: O(1)
+
+-  **Inorder Traversal (Recursive / Iterative)** — Perform full inorder traversal, track previous/next node.  
+   TC: O(n) / SC: O(h)
+
+---
