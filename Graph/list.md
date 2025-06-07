@@ -13,3 +13,17 @@ Cycle Detection in unirected Graph (dfs)542.
 127. Word Ladder 2
 1905. Count Sub Islands
 934. Shortest Bridge
+Bipartite Graph (DFS)
+2493. Divide Nodes Into the Maximum Number of Groups
+207. Course Schedule
+207. Course Schedule 2
+
+
+N-Queens II
+
+
+
+
+
+to do
+2392. Build a Matrix With Conditions
