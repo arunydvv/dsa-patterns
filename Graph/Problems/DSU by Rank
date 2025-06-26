@@ -1,0 +1,38 @@
+class Solution {
+    int[] parent , rank;
+    public int makeConnected(int n, int[][] nums) {
+
+        // if(nums.length < n-1) return -1;
+        parent = new int[n];
+        rank = new int[n];
+        for(int i=0; i< n; i++) parent[i] = i;
+
+
+        // int count = n;
+
+        // for (int[] num : nums) {
+        //     if (find(num[0]) != find(num[1])) {
+        //         union(num[0], num[1]);
+        //         count--;
+        //     }
+        // }
+
+        // return count -1;
+    }
+
+    void union(int a, int b){
+        int pa = find(a);
+        int pb = find(b);
+        if(rank[pa] > rank[pb]) parent[pb] = pa;
+        else if (rank[pb] > rank[pa]) parent[pa] = pb;
+        else{
+            parent[pa] = pb;
+            rank[pb]++;
+        }
+    }
+
+    int find(int a){
+        if(parent[a] != a)  return parent[a] = find(parent[a]);
+        return a;
+    }
+}
