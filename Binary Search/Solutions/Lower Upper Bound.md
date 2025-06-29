@@ -48,7 +48,6 @@ int upperBound(int[] arr, int target) {
 ✅ **Key Notes:**
 
 -   Both functions work by adjusting `low` and `high` so that they converge to the correct bound.
-    
 -   The final value of `low` is returned directly.
     
 
