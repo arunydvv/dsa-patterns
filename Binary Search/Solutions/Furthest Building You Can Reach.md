@@ -1,138 +1,192 @@
-# 📌 Furthest Building You Can Reach
-
-**Problem Link:** [LeetCode 1642](https://leetcode.com/problems/furthest-building-you-can-reach/)
 
 
-## 📖 Problem Statement
+## 📖 Furthest Building You Can Reach (LeetCode 1642)
 
-You are given:
-- An integer array `heights` representing the height of buildings in a row.
-- `bricks` and `ladders` representing resources to climb buildings.
-
-You start at building `0` and move to building `i + 1`:
-- If `heights[i+1] <= heights[i]` → no resources needed.
-- If `heights[i+1] > heights[i]` → climb difference using either:
-  - **Bricks** equal to the height difference.
-  - **One ladder**.
-
-**Goal:**  
-Return the **furthest building index** you can reach before running out of resources.
+**Problem Link:** [https://leetcode.com/problems/furthest-building-you-can-reach/](https://leetcode.com/problems/furthest-building-you-can-reach/)
 
 
 
-## 📌 Approach
+## 📜 Problem Summary
 
-### ✅ Idea:
-- Use **binary search on the possible answer (index)** from `0` to `heights.length-1`.
-- For each candidate index:
-  - Simulate climbing using a **min-heap (priority queue)**.
-  - Always use bricks for the smallest climbs and save ladders for bigger ones.
+You're given an array `heights`, and a number of `bricks` and `ladders`. When moving from building `i` to `i+1`:
 
-### ✅ Why Binary Search?
-- The problem asks for the *maximum reachable index under constraints*, which can be efficiently found via **binary search on the index space** with a helper function that checks if reaching a given index is possible.
+-   If `heights[i+1] > heights[i]`, you must climb the difference.
+    
+-   You can use either:
+    
+    -   That many `bricks`
+        
+    -   One `ladder`
+        
+-   Find the furthest building you can reach.
+    
 
----
+----------
 
-## 📊 Time and Space Complexity
+## 📊 Approaches (In Increasing Order of Optimisation)
 
-| Operation                    | Time Complexity         | Space Complexity |
-|:----------------------------|:------------------------|:----------------|
-| Binary Search on index space | O(log n)                  | O(1)             |
-| Simulating climbs at each mid| O(n log n) (because of PQ)| O(n)             |
-| **Total**                    | O(n log n \* log n)       | O(n)             |
 
----
 
-## 📦 Companies Asked In:
+### 1️⃣ DP with Memoization (TLE)
 
-- **Amazon**
-- **Google**
-- **Microsoft**
-- **Uber**
-- **Facebook (Meta)**
+**Idea:**  
+Use recursion with memoization, storing (index, bricks, ladders) as the state.
 
-Very popular for testing **binary search on answers + greedy resource allocation using heaps**.
-
----
-
-## 📌 Code (Java)
+**Time Complexity:** `O(n * bricks * ladders)`  
+**Space Complexity:** `O(n * bricks * ladders)`
 
 ```java
-class Solution {
-    public int furthestBuilding(int[] heights, int bricks, int ladders) {
-        int start = 0;
-        int end = heights.length - 1;
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            if (canReach(heights, bricks, ladders, mid)) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
-        }
-        return end;
+public int furthestBuildingDP(int[] heights, int bricks, int ladders) {
+    Map<String, Integer> memo = new HashMap<>();
+    return dp(heights, 0, bricks, ladders, memo);
+}
+
+private int dp(int[] heights, int i, int bricks, int ladders, Map<String, Integer> memo) {
+    if (i == heights.length - 1) return i;
+    String key = i + "," + bricks + "," + ladders;
+    if (memo.containsKey(key)) return memo.get(key);
+
+    int diff = heights[i + 1] - heights[i];
+    int furthest = i;
+    if (diff <= 0) furthest = dp(heights, i + 1, bricks, ladders, memo);
+    else {
+        if (bricks >= diff)
+            furthest = Math.max(furthest, dp(heights, i + 1, bricks - diff, ladders, memo));
+        if (ladders > 0)
+            furthest = Math.max(furthest, dp(heights, i + 1, bricks, ladders - 1, memo));
     }
 
-    boolean canReach(int[] heights, int bricks, int ladders, int target) {
-        if (target == 0) return true;
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for (int i = 1; i <= target; i++) {
-            int diff = heights[i] - heights[i - 1];
-            if (diff > 0) pq.add(diff);
-        }
-
-        while (!pq.isEmpty()) {
-            int climb = pq.poll();
-            if (bricks >= climb) bricks -= climb;
-            else if (ladders > 0) ladders--;
-            else return false;
-        }
-        return true;
-    }
+    memo.put(key, furthest);
+    return furthest;
 }
 
 ```
 
 ----------
 
-## 📚 Notes
+### 2️⃣ Greedy Without Heap (Inefficient)
 
--   **Use bricks for the smallest jumps first** — handled via a min-heap.
-    
--   **Use ladders for largest jumps** when bricks are insufficient.
-    
--   Cleverly combining **binary search on answer** and **priority queue** for resource management.
-    
--   Clean use-case of the **binary search + greedy + heap optimization pattern**.
-    
+**Idea:**  
+Use bricks first when possible, then ladders.
 
-----------
+**Time Complexity:** `O(n²)`  
+**Space Complexity:** `O(1)`
 
-## 📌 Similar Problems / Patterns
+```java
+public int furthestBuildingNaiveGreedy(int[] heights, int bricks, int ladders) {
+    for (int i = 0; i < heights.length - 1; i++) {
+        int diff = heights[i + 1] - heights[i];
+        if (diff <= 0) continue;
 
--   **Minimum Number of Refueling Stops**
-    
--   **K-th Smallest Element in a Sorted Matrix**
-    
--   **Path with Minimum Effort**
-    
--   Binary Search on Answer problems
-    
--   Greedy problems using PriorityQueue (Min Heap / Max Heap)
-    
+        if (bricks >= diff) bricks -= diff;
+        else if (ladders > 0) ladders--;
+        else return i;
+    }
+    return heights.length - 1;
+}
+
+```
 
 ----------
 
-## ✅ Summary
+### 3️⃣ Max-Heap on Bricks Used (Greedy Variant)
 
-Efficient O(n log n log n) solution combining:
+**Idea:**  
+Use a max-heap to track climbs and swap the largest climbs for ladders when needed.
 
--   **Binary Search on possible furthest index**
-    
--   **PriorityQueue for greedy resource allocation**
-    
--   Neat edge-case handling for zero jumps
-    
+**Time Complexity:** `O(n log n)`  
+**Space Complexity:** `O(n)`
 
-A great interview problem testing both algorithmic patterns and optimization awareness.
+```java
+public int furthestBuildingMaxHeap(int[] heights, int bricks, int ladders) {
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+    for (int i = 0; i < heights.length - 1; i++) {
+        int diff = heights[i + 1] - heights[i];
+        if (diff <= 0) continue;
+
+        bricks -= diff;
+        maxHeap.add(diff);
+
+        if (bricks < 0) {
+            if (ladders > 0) {
+                bricks += maxHeap.poll();
+                ladders--;
+            } else return i;
+        }
+    }
+    return heights.length - 1;
+}
+
+```
+
+----------
+
+### 4️⃣ Min-Heap (Optimal Greedy)
+
+**Idea:**  
+Use a min-heap to always assign ladders to the largest climbs.
+
+**Time Complexity:** `O(n log n)`  
+**Space Complexity:** `O(n)`
+
+```java
+public int furthestBuildingMinHeap(int[] heights, int bricks, int ladders) {
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+    for (int i = 0; i < heights.length - 1; i++) {
+        int diff = heights[i + 1] - heights[i];
+        if (diff <= 0) continue;
+
+        minHeap.add(diff);
+        if (minHeap.size() > ladders) {
+            bricks -= minHeap.poll();
+        }
+        if (bricks < 0) return i;
+    }
+    return heights.length - 1;
+}
+
+```
+
+----------
+
+### 5️⃣ Binary Search + Feasibility Check (Parametric Search)
+
+**Idea:**  
+Binary search on the furthest reachable index and for each mid-point check feasibility using the min-heap method.
+
+**Time Complexity:** `O(n log n log n)`  
+**Space Complexity:** `O(n)`
+
+```java
+public int furthestBuildingBinarySearch(int[] heights, int bricks, int ladders) {
+    int left = 0, right = heights.length - 1, ans = 0;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (canReach(heights, bricks, ladders, mid)) {
+            ans = mid;
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return ans;
+}
+
+private boolean canReach(int[] heights, int bricks, int ladders, int pos) {
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+    for (int i = 0; i < pos; i++) {
+        int diff = heights[i + 1] - heights[i];
+        if (diff <= 0) continue;
+        minHeap.add(diff);
+        if (minHeap.size() > ladders) bricks -= minHeap.poll();
+        if (bricks < 0) return false;
+    }
+    return true;
+}
+
+```
+
+----------
 
