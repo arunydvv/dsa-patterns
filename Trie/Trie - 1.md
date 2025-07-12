@@ -99,6 +99,8 @@ class Trie {
 
 - **Fixed alphabet size (26)** — make sure the input constraints match this.
 
+- **Cant safely erase here** 
+
 - **Not thread-safe** — avoid concurrent access without synchronization in multi-threaded environments.
 
 ---

@@ -23,70 +23,70 @@ This project implements a Trie (Prefix Tree) with:
 
 ```java
 class Trie {
-    private class Node {
-        private Node[] links = new Node[26];
-        private boolean flag = false;
-
-        public boolean containsKey(char ch) {
-            return links[ch - 'a'] != null;
+    static class Node{
+        Node[] links = new Node[26];
+        boolean flag = false;
+        
+        boolean containsKey(char ch){
+            return links[ch -'a'] != null;
         }
-
-        public Node get(char ch) {
+        
+        Node get(char ch){
             return links[ch - 'a'];
         }
 
-        public void put(char ch, Node node) {
-            links[ch - 'a'] = node;
+        void put(char ch, Node node){
+             links[ch - 'a'] = node;
         }
-
-        public void setEnd() {
-            flag = true;
+        
+        void setEnd(){
+            flag = true;   // means a word ends here
+            // If apple ends at 'e' we look at links[e] node and if that is flag = true
+            // that means apple is present in Trie 
         }
-
-        public boolean isEnd() {
+        
+        boolean isEnd(){
             return flag;
-        }
+        }        
     }
-
+    
+    
     private Node root;
-
     public Trie() {
-        root = new Node();
+        root = new Node();       
     }
 
     public void insert(String word) {
-        Node node = root;
-        for (char ch : word.toCharArray()) {
-            if (!node.containsKey(ch)) {
-                node.put(ch, new Node());
+        Node current = root;
+        for (int i = 0; i < word.length(); i++) {
+            if (!current.containsKey(word.charAt(i))){
+                current.put(word.charAt(i), new Node());
             }
-            node = node.get(ch);
+            current = current.get(word.charAt(i));
         }
-        node.setEnd();
+        current.setEnd();;
     }
 
     public boolean search(String word) {
-        Node node = root;
-        for (char ch : word.toCharArray()) {
-            if (!node.containsKey(ch)) {
-                return false;
-            }
-            node = node.get(ch);
+        Node current = root;
+        for (int i = 0; i < word.length(); i++) {
+            if (!current.containsKey(word.charAt(i))) return false;
+            current = current.get(word.charAt(i));
         }
-        return node.isEnd();
+        return current.isEnd();
     }
 
     public boolean startsWith(String prefix) {
-        Node node = root;
-        for (char ch : prefix.toCharArray()) {
-            if (!node.containsKey(ch)) {
-                return false;
-            }
-            node = node.get(ch);
+        Node current = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            if (!current.containsKey(prefix.charAt(i))) return false;
+            current = current.get(prefix.charAt(i));
         }
         return true;
     }
 }
+
+
 
 ```
 
